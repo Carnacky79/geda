@@ -1,0 +1,186 @@
+// compileExpanded: ../$1.css, compileCompressed: ../$1.min.css
+
+@import "colors";
+@import "alert";
+@import "navbar";
+@import "sidebar";
+@import "dropdown";
+@import "tables";
+@import "form";
+@import "parsley";
+@import "fatture_ddt";
+@import "giornate";
+@import "login";
+
+
+button {
+     &.btn {
+          font-size: 12px;
+          padding: 5px 10px;
+     }
+}
+
+.form-control {
+     &[type="checkbox"] {
+          display: inline-block;
+          width: 20px;
+     }
+}
+
+
+.no-sides {
+     padding-left: 0;
+     margin-left: 0;
+     padding-right: 0;
+     margin-right: 0;
+}
+
+.no-left {
+     padding-left: 0;
+     margin-left: 0;
+}
+
+
+.container {
+     padding-left: 0px;
+     padding-right: 0px;
+}
+
+
+.card-box {
+
+     padding: 10px;
+
+     &.widget-user {
+          i {
+               margin-top: 10px;
+               float: left;
+               font-size: 50px;
+               line-height: 80px;
+               margin-left: 20px;
+          }
+     }
+}
+
+
+
+a {
+     .card-box {
+          i {
+               color: $grey_1;
+          }
+     }
+}
+
+
+
+
+.form_header {
+     .btn-group {
+          &.pull-right {
+               button:not(:first-child) {
+                    margin-left: 10px;
+               }
+          }
+     }
+}
+
+
+
+.w100 {
+     width:100%;
+}
+
+
+.logo {
+     line-height: 40px;
+}
+
+
+.hidden {
+     display: none;
+}
+
+
+
+.card-box {
+     button {
+          &.btn {
+               padding-top: 3px !important;
+               padding-bottom: 3px !important;
+               padding-left: 5px;
+               height: 27px !important;
+               font-size: 12px !important;
+               top: -6px;
+               float: right;
+               position: relative;
+          }
+     }
+}
+
+
+
+
+
+
+@media (min-width: 1200px) {
+
+     .container {
+          max-width: 1300px;
+     }
+}
+
+
+.form-control[disabled], fieldset[disabled] .form-control {
+     background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+
+
+.right-in {
+     text-align: right;
+}
+
+
+
+
+.dropdown {
+     .barcode {
+          font-size: 10px;
+     }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

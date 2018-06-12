@@ -1,0 +1,75 @@
+
+#tab_fattura_righe, #tab_ddt_righe {
+
+
+
+     th {
+          font-size: 12px;
+          padding: 10px 4px;
+     }
+
+     td {
+          padding: 6px 4px;
+     }
+
+
+
+     td {
+          &.quantita,
+          &.sconto,
+          &.id_iva,
+          &.prezzo_unitario,
+          &.sub_totale,
+          &.totale {
+               input {
+                    text-align: right;
+               }
+          }
+     }
+
+
+
+
+     .action_col {
+          i {
+               font-size: 15px;
+               margin-left: 5px;
+          }
+     }
+
+}
+
+#tab_fattura_info, #tab_ddt_info {
+     margin-top: 20px;
+
+     tbody td {
+          font-size: 14px;
+
+          &.descr {
+               text-align: right;
+               padding-right: 15px;
+               font-size: 14px;
+               width: 150px;
+          }
+
+          &.totale_imponibile, &.totale_iva, &.totale_accessorie, &.totale_esente, &.totale_totale {
+               text-align: right;
+               padding-right: 15px;
+               width: 150px;
+          }
+
+          &.totale_totale {
+               font-size: 16px;
+          }
+
+     }
+}
+
+
+
+
+
+
+
+
+

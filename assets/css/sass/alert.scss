@@ -1,0 +1,74 @@
+
+#loading_layer {
+     display: table;
+     position: fixed;
+     width: 100%;
+     height: 100%;
+     opacity: 0.7;
+     background-color: $gray_dark;
+     z-index: 1100 !important;
+     text-align: center;
+     i {
+          display: table-cell;
+          vertical-align: middle;
+          color:white;
+          font-size: 45px;
+          /*cursor: pointer;*/
+     }
+}
+
+.messaggio {
+     display: none;
+     opacity: 1;
+     min-width: 440px;
+     max-width: 550px;
+     cursor: default;
+     text-indent: -25.3px;
+     padding-left: 37px;
+     padding-top:8px;
+     padding-bottom:8px;
+     margin-top: 8px;
+
+
+     i {
+          font-size: 16px;
+          margin-right: 13px;
+          text-indent: 0px;
+          &.fa-refresh {
+               font-size: 15px;
+               margin-left: -4px;
+          }
+     }
+
+
+     span {
+          font-size:16px;
+     }
+
+     &.alert-danger {
+          background-color: $red_bg;
+          border-color: $red_border;
+          color: $red_color;
+     }
+     &.alert-warning {
+          background-color: $yellow_bg;
+          border-color: $yellow_border;
+          color: $yellow_color;
+     }
+     &.alert-info {
+          background-color: $blue_bg;
+          border-color: $blue_border;
+          color: $blue_color;
+     }
+}
+
+#messaggi_popup{
+     position:fixed;
+     left:50%;
+     z-index: 1000;
+}
+
+#messaggi_wrapper{
+     position:relative;
+     left:-50%;
+}

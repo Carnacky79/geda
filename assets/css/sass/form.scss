@@ -1,0 +1,84 @@
+
+.form-control {
+     padding:{
+          top:3px !important;
+          bottom:3px !important;
+          left:5px;
+     }
+     height:27px !important;
+     font-size:12px !important;
+}
+
+textarea.form-control {
+     padding-top: 3px !important;
+     resize: none !important;
+}
+
+select.form-control {
+     padding-right:18px;
+}
+
+
+@media (min-width: 768px) {
+
+     .form-horizontal .control-label {
+          padding-top: 4px;
+     }
+}
+
+
+.form-control:focus {
+     color: $grey_1 !important;
+}
+
+
+
+.jFiler-theme-default .jFiler-input {
+     width: inherit !important;
+}
+
+
+
+.jFiler-items-default .jFiler-item .jFiler-item-others {
+     padding-left: 4px;
+}
+
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     margin: 0;
+}
+
+
+
+
+
+.ui.search.dropdown .menu {
+     overflow-y: scroll;
+     max-height: 125px;
+}
+
+
+
+.like-text {
+     border-left: 0;
+     border-right: 0;
+     border-top: 0;
+     border-radius: 0;
+     pointer-events: none;
+     -webkit-appearance: none;
+}
+
+
+
+
+
+
+
+
+
+
