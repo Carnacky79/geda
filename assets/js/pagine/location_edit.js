@@ -18,11 +18,12 @@ $(document).ready(function(){
 $(document).on('click', '#tab_prodotti_presenti td.action_col i.editIcon, #tab_prodotti_mancanti td.action_col i.editIcon', function(){
 
      var id_prodotto = $(this).closest('tr').attr('id_prodotto');
+     var id_location = getParameterByName('id_location');
 
      if(Number($('#livello_utente').val())===1) {
-          location.href='?pagina=giacenze_edit&id_prodotto='+id_prodotto;
+          location.href='?pagina=giacenze_edit&id_prodotto='+id_prodotto+'&id_location='+id_location;
      } else {
-          location.href='?pagina=giacenze_edit_limited&id_prodotto='+id_prodotto;
+          location.href='?pagina=giacenze_edit_limited&id_prodotto='+id_prodotto+'&id_location='+id_location;
      }
 });
 

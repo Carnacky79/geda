@@ -3,9 +3,6 @@
 
 	<div class="row form_header">
 		<div class="col-sm-12">
-			<div class="btn-group pull-right m-t-5 m-b-20">
-				<?=$this->btn_salva;?><?=$this->btn_elimina;?>
-			</div>
 			<h4 class="page-title"><?=$titolo;?></h4>
 		</div>
 	</div>
@@ -77,9 +74,9 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label class="col-md-10 control-label" for="qta_residua" >Quantita residua</label>
+				<label class="col-md-10 control-label" for="quantita" >Quantita residua</label>
 				<div class="col-md-10" >
-					<input type="number" id="qta_residua" name="qta_residua" class="form-control" step="1" >
+					<input type="number" id="quantita" name="quantita" class="form-control" step="1" >
 				</div>
 			</div>
 			<div class="form-group">
@@ -94,35 +91,10 @@
 					<textarea id="descrizione" name="descrizione" class="form-control" ></textarea>
 				</div>
 			</div>
-			<div class="form-group">
-				<label class="col-md-10 control-label" for="image" >Immagine</label>
-				<div class="col-md-10 padding-left-0 padding-right-0" >
-					<input type="file" name="image" id="image">
-				</div>
-			</div>
 		</div>
 	</div>
 
 	<?=$this->form_end;?>
-
-	<div class="row">
-		<div class="col-lg-12">
-			<div class="card-box max550">
-				<label class="col-md-10 control-label" for="tab_fornitori_associati" >Fornitori associati</label>
-				<button type="button" class="btn btn-info waves-effect waves-light add_new" aria-expanded="false"><span class="m-r-10"><i class="fa fa-plus-circle" aria-hidden="true"></i></span>Aggiungi</button>
-				<table id="tab_fornitori_associati" class="table table-striped dt-responsive nowrap" cellspacing="0" width="100%">
-					<thead>
-						<tr>
-							<th>Azioni</th>
-							<th>Ragione sociale</th>
-							<th>Costo di acquisto</th>
-						</tr>
-					</thead>
-					<tbody></tbody>
-				</table>
-			</div>
-		</div>
-	</div>
 
 
 	<div class="row">
@@ -158,117 +130,5 @@
 			</div>
 		</div>
 	</div>
-
-
-	<div class="row">
-		<div class="col-lg-12">
-			<div class="card-box">
-				<label class="col-md-10 control-label" for="tab_fatture_ddt_fornitori" >Documenti in Entrata</label>
-				<table id="tab_fatture_ddt_fornitori" class="table table-striped dt-responsive nowrap" cellspacing="0" width="100%">
-					<thead>
-						<tr>
-							<th>Azioni</th>
-							<th>Codice</th>
-							<th>Data</th>
-							<th>Quantità</th>
-							<th>Prezzo</th>
-							<th>Fornitore</th>
-							<th>Tipo</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php
-						foreach ($this->record_fatture->fornitore as $record) {
-							if($record->type===1) {continue;}
-							?>
-							<tr id_fattura="<?=$record->id_fattura;?>" type="<?=$record->type;?>" >
-								<td class="action_col" ><i class="fa fa-pencil-square-o editIcon" aria-hidden="true"></i></td>
-								<td><?=$record->codice;?></td>
-								<td><?=utility::toUIDate($record->data);?></td>
-								<td class="right-in" ><?=$record->quantita;?></td>
-								<td class="right-in" ><?=$record->prezzo_unitario;?></td>
-								<td><?=$record->fornitore;?></td>
-								<td>Fattura</td>
-							</tr>
-							<?php
-						}
-						foreach ($this->record_ddt->fornitore as $record) {
-							if($record->type===1) {continue;}
-							?>
-							<tr id_ddt="<?=$record->id_ddt;?>" type="<?=$record->type;?>" >
-								<td class="action_col" ><i class="fa fa-pencil-square-o editIcon" aria-hidden="true"></i></td>
-								<td><?=$record->codice;?></td>
-								<td><?=utility::toUIDate($record->data);?></td>
-								<td class="right-in" ><?=$record->quantita;?></td>
-								<td class="right-in" ><?=$record->prezzo_unitario;?></td>
-								<td><?=$record->fornitore;?></td>
-								<td>DDT</td>
-							</tr>
-							<?php
-						}
-						?>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
-
-
-	<div class="row">
-		<div class="col-lg-12">
-			<div class="card-box">
-				<label class="col-md-10 control-label" for="tab_fatture_ddt_clienti" >Documenti in uscita</label>
-				<table id="tab_fatture_ddt_clienti" class="table table-striped dt-responsive nowrap" cellspacing="0" width="100%">
-					<thead>
-						<tr>
-							<th>Azioni</th>
-							<th>Codice</th>
-							<th>Data</th>
-							<th>Quantità</th>
-							<th>Prezzo</th>
-							<th>Cliente</th>
-							<th>Tipo</th>
-						</tr>
-					</thead>
-					<tbody>
-						<?php
-						foreach ($this->record_fatture->cliente as $record) {
-							if($record->type===0) {continue;}
-							?>
-							<tr id_fattura="<?=$record->id_fattura;?>" type="<?=$record->type;?>" >
-								<td class="action_col" ><i class="fa fa-pencil-square-o editIcon" aria-hidden="true"></i></td>
-								<td><?=$record->codice;?></td>
-								<td><?=utility::toUIDate($record->data);?></td>
-								<td class="right-in" ><?=$record->quantita;?></td>
-								<td class="right-in" ><?=$record->prezzo_unitario;?></td>
-								<td><?=$record->cliente;?></td>
-								<td>Fattura</td>
-							</tr>
-							<?php
-						}
-						foreach ($this->record_ddt->cliente as $record) {
-							if($record->type===0) {continue;}
-							?>
-							<tr id_ddt="<?=$record->id_ddt;?>" type="<?=$record->type;?>" >
-								<td class="action_col" ><i class="fa fa-pencil-square-o editIcon" aria-hidden="true"></i></td>
-								<td><?=$record->codice;?></td>
-								<td><?=utility::toUIDate($record->data);?></td>
-								<td class="right-in" ><?=$record->quantita;?></td>
-								<td class="right-in" ><?=$record->prezzo_unitario;?></td>
-								<td><?=$record->cliente;?></td>
-								<td>DDT</td>
-							</tr>
-							<?php
-						}
-						?>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
-
 </div>
-
-
-<?php $includeJS = array('prodotti_fornitori'); ?>
 
