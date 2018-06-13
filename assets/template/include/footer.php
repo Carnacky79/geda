@@ -4,6 +4,19 @@
      2017 © Stocker
 </footer>
 
+<?php
+
+$fh = fopen(getcwd().'\assets\template\include\storico_lavori_geda.txt','r');
+    echo '<div style="padding-left:20px; font-size:9px; padding-bottom:30px;">';
+while ($line = fgets($fh)) {
+    // <... Do your work with the line ...>
+    echo $line;
+    echo '<br />';
+}
+    echo '</div>';
+fclose($fh);
+?>
+
 </div>
 <!-- ============================================================== -->
 <!-- End Right content here -->

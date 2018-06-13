@@ -1,0 +1,6 @@
+* Aggiungere alert per quanto riguarda il numero di fattura. No fatture con stesso numero e stessa data per lo stesso anno fiscale
+
+11/06/2018	Studio gestionale - Modifica file prodotti_list.js
+12/06/2018	Studio gestionale - Inizio correzione errore lista prodotti in giacenza nel punto vendita
+13/06/2018	Studio gestionale - Continuo lavoro su correzione errore lista prodotti in giacenza nel punto vendita; generazione getRecordByLocation
+13/06/2018	Correzione errore lista prodotti in giacenza completata
