@@ -13,9 +13,6 @@ if($livello_utente!==1) {
 
 	<div class="row form_header">
 		<div class="col-sm-12">
-			<div class="btn-group pull-right m-t-5 m-b-20">
-				<?=$this->btn_salva;?>
-			</div>
 			<h4 class="page-title"><?=$titolo;?></h4>
 		</div>
 	</div>
