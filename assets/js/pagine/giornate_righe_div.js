@@ -27,7 +27,7 @@ function search_record_prodotti(id_prodotto) {
 }
 
 
-function carica() {
+     function carica() {
 
      $('#tab_giornate_righe').DataTable().destroy();
 

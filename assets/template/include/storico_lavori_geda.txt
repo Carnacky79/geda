@@ -5,3 +5,4 @@
 13/06/2018	Studio gestionale - Continuo lavoro su correzione errore lista prodotti in giacenza nel punto vendita; generazione getRecordByLocation
 13/06/2018	Correzione errore lista prodotti in giacenza completata
 14/06/2018  Correzione errore di visualizzazione dettagli prodotto se si entra come punto vendita iniziata e completata
+14/06/2018  Studio logica di implementazione delle vendite giornaliere. Necessario rivedere tutto il codice in quanto fatto non benissimo.
