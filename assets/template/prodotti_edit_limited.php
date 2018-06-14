@@ -73,9 +73,9 @@ if($livello_utente!==1) {
 		</div>
 		<div class="col-lg-6">
 			<div class="form-group">
-				<label class="col-md-10 control-label" for="qta_residua" >Quantita residua</label>
+				<label class="col-md-10 control-label" for="quantita" >Quantita residua</label>
 				<div class="col-md-10" >
-					<input type="number" id="qta_residua" name="qta_residua" class="form-control" step="1" >
+					<input type="number" id="quantita" name="quantita" class="form-control" step="1" >
 				</div>
 			</div>
 			<div class="form-group">

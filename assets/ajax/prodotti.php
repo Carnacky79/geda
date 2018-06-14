@@ -106,6 +106,18 @@ switch ($_REQUEST['action']) {
      die(json_encode($operazione));
      break;
 
+    case 'getRecordByLocation':
+        $dati_utente = session::getvalue('dati_utente');
+        if ( !isset($_REQUEST['id_prodotto']) ) { die(json_encode(false)); }
+        if ( !isset($dati_utente->id_location) ) { die(json_encode(false)); }
+
+        $id_prodotto = json_decode($_REQUEST['id_prodotto']);
+        $id_location = $dati_utente->id_location;
+
+        $operazione = $prodotti->getRecordByLocation( $id_prodotto, $id_location);
+
+        die(json_encode($operazione));
+    break;
 
 
 

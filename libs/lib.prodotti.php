@@ -301,7 +301,18 @@ class prodotti extends baseclass {
      }
 
 
+    public function getRecordByLocation($id_prodotto,$id_location){
+        $sql = " SELECT t0.*, t1.nome AS categoria, t2.quantita
+          FROM prodotti t0
+          LEFT JOIN categorie t1 USING (id_buyer,id_categoria,sys_attivo)
+          JOIN giacenze t2 USING (id_prodotto)
+          WHERE t0.sys_attivo='1' AND t0.id_prodotto = '$id_prodotto' AND t2.id_location = '$id_location'
+          AND t0.id_buyer='$this->id_buyer'
+          ";
+        $this->db->query($sql);
 
+        return $this->db->getrow();
+    }
 
 
 }
