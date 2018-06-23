@@ -91,6 +91,7 @@ if(isset($this->record->stato) && $this->record->stato==0) {
 							<th>Azioni</th>
 							<th>Prodotto</th>
 							<th>Quantità</th>
+                            <th>Prezzo Unitario</th>
 							<th>Totale</th>
 							<th>Pagamento</th>
 						</tr>

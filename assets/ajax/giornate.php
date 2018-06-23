@@ -118,6 +118,15 @@ switch ($_REQUEST['action']) {
      break;
 
 
+     case 'getC_U':
+         if ( !isset($_REQUEST['id_prodotto']) ) { die(json_encode(false)); }
+         $id_prodotto = json_decode($_REQUEST['id_prodotto']);
+
+         $operazione = $giornate->getC_U($id_prodotto);
+
+         die(json_encode($operazione));
+     break;
+
      case 'getRecord':
      if ( !isset($_REQUEST['id_giornata']) ) { die(json_encode(false)); }
 

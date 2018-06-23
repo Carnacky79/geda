@@ -305,6 +305,22 @@ function semina_valori(pag,action,obj,back,callback) {
      ajax_call(ajax_obj);
 }
 
+function semina_valori_2(pag,action,obj,riga,back, callback) {
+
+    var valori = {};
+
+    var ajax_obj = {pag:pag, action:action, wait:false, backError:false, obj:obj, esegui:function(data) {
+            $.each(data,function(key,val){
+                $('[id_riga = '+riga+']').find('td.right-in').children('input#c_u').val(val);
+            });
+
+            if(callback!=undefined && callback!=false) {
+                callback();
+            }
+        }};
+    ajax_call(ajax_obj);
+}
+
 
 
 
@@ -356,7 +372,7 @@ function ajax_call(oggetto) {
                          headers: oggetto.headers,
                          url: 'assets/ajax/'+oggetto.pag+'.php?action='+oggetto.action,
                          data: oggetto.obj,
-                         success:function(data){ if(oggetto.log===true) { console.log(data); }
+                         success:function(data){ if(true===true) { console.log(data); }
 
                          if(is_true(data))
                          {
@@ -378,7 +394,7 @@ function ajax_call(oggetto) {
                          headers: oggetto.headers,
                          url: 'assets/ajax/'+oggetto.pag+'.php?action='+oggetto.action,
                          data: oggetto.obj,
-                         success:function(data){ if(oggetto.log===true) { console.log(data); }
+                         success:function(data){ if(true===true) { console.log(data); }
 
                          if(is_true(data))
                          {

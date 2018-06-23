@@ -6,3 +6,5 @@
 13/06/2018	Correzione errore lista prodotti in giacenza completata
 14/06/2018  Correzione errore di visualizzazione dettagli prodotto se si entra come punto vendita iniziata e completata
 14/06/2018  Studio logica di implementazione delle vendite giornaliere. Necessario rivedere tutto il codice in quanto fatto non benissimo.
+20/06/2018  Continuo studio delle vendite giornaliere. Sono stati fatti parecchi magheggi e bisogna trovare delle soluzioni più eleganti e funzioonali.
+24/06/2018  Fine lavoro su vendite giornaliere. Aggiunta la visualizzazione del prezzo consigliato e calcolo totale in base alle quantità.

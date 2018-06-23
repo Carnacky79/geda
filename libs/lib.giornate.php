@@ -69,6 +69,19 @@ class giornate extends baseclass {
           return $this->db->getrow();
      }
 
+     public function getC_U($id_prodotto){
+
+          $sql = " SELECT t0.c_u
+          FROM prodotti t0
+          WHERE t0.id_prodotto = '$id_prodotto'
+          ";
+
+         $this->db->query($sql);
+
+         return $this->db->getrow();
+
+     }
+
 
 
      public function getDateRecords($giorno,$id_location=false) {

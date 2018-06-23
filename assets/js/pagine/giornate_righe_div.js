@@ -6,8 +6,9 @@ var progressivo_riga = 0;
 var riga_da_eliminare = {};
 var columnDefs = [
      {"width": "6%", "targets": 0},
-     {"width": "15%", "targets": 2},
-     {"width": "15%", "targets": 3},
+     {"width": "25%", "targets": 1},
+     {"width": "10%", "targets": 2},
+     {"width": "10%", "targets": 3},
      {"width": "20%", "targets": 4},
 ];
 
@@ -59,6 +60,9 @@ function search_record_prodotti(id_prodotto) {
                '<div class="ui fluid search selection dropdown"><input type="hidden" id="id_prodotto" name="id_prodotto" ><i class="dropdown icon"></i>'+select_prodotti+'</div>',
 
                '<input type="number" class="form-control textStyle right-in" id="quantita" name="quantita" step="0.01"  />',
+
+               '<input type="number" class="form-control textStyle right-in" id="c_u" name="c_u" step="0.01"  />',
+
                '<input type="number" class="form-control textStyle right-in" id="totale" name="totale" step="0.01"  />',
 
                '<select class="form-control" id="id_metodo_pagamento" name="id_metodo_pagamento" >'+
@@ -81,8 +85,9 @@ function search_record_prodotti(id_prodotto) {
 
                $(this).find('td').eq(0).addClass('action_col');
                $(this).find('td').eq(2).addClass('quantita right-in');
-               $(this).find('td').eq(3).addClass('totale right-in');
-               $(this).find('td').eq(4).addClass('metodo_pagamento');
+               $(this).find('td').eq(3).addClass('right-in');
+               $(this).find('td').eq(4).addClass('totale right-in');
+               $(this).find('td').eq(5).addClass('metodo_pagamento');
           });
 
           progressivo_riga++;
@@ -92,6 +97,31 @@ function search_record_prodotti(id_prodotto) {
           $('.ui.dropdown').dropdown();
      }
 
+
+
+$(document).on('change', '#id_prodotto', function(event) {
+    //alert( $(this).closest('tr').attr('id_riga') );
+    var riga_attuale = $(this).closest('tr').attr('id_riga');
+    var id_prodotto = $('[id_riga = '+riga_attuale+']').find('div').children('#id_prodotto').val();
+
+    semina_valori_2('giornate','getC_U',{id_prodotto:id_prodotto},riga_attuale,'',);
+});
+
+$(document).on('change', '#quantita', function(event) {
+    //alert( $(this).closest('tr').attr('id_riga') );
+    var riga_attuale = $(this).closest('tr').attr('id_riga');
+    var totale = $(this).val() * $('[id_riga = '+riga_attuale+']').find('td.right-in').children('input#c_u').val();
+    $('[id_riga = '+riga_attuale+']').find('td.totale').children('input#totale').val(totale);
+
+});
+
+$(document).on('change', '#c_u', function(event) {
+    //alert( $(this).closest('tr').attr('id_riga') );
+    var riga_attuale = $(this).closest('tr').attr('id_riga');
+    var totale = $(this).val() * $('[id_riga = '+riga_attuale+']').find('td.quantita').children('input#quantita').val();
+    $('[id_riga = '+riga_attuale+']').find('td.totale').children('input#totale').val(totale);
+
+});
 
 
      $(document).on('click', '.add_new', function(){
@@ -217,7 +247,7 @@ function search_record_prodotti(id_prodotto) {
 
 
 
-     $(document).on('change', '[name="quantita"], [name="totale"], [name="id_metodo_pagamento"]', function(){
+     $(document).on('change', '[name="c_u"], [name="quantita"], [name="totale"], [name="id_metodo_pagamento"]', function(){
           calcola();
      });
 
