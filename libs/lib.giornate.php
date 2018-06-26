@@ -208,7 +208,7 @@ class giornate extends baseclass {
 
      public function getRighe($id_giornata) {
 
-          $sql = " SELECT t0.*, t2.nome AS prodotto, t3.nome AS metodo
+          $sql = " SELECT t0.*, t2.nome AS prodotto, t2.c_u AS c_u, t3.nome AS metodo
           FROM giornate_righe t0
           LEFT JOIN prodotti t2 USING (id_buyer,id_prodotto,sys_attivo)
           LEFT JOIN metodi_pagamento t3 USING (id_buyer,id_metodo_pagamento,sys_attivo)

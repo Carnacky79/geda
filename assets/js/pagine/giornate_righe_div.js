@@ -173,6 +173,8 @@ $(document).on('change', '#c_u', function(event) {
 
                          righe_html += '<td class="quantita" ><input type="number" class="form-control textStyle right-in" id="quantita" name="quantita" value="'+val.quantita+'" step="0.01" '+disabled+' /></td>';
 
+                         righe_html += '<td class="c_u" ><input type="number" class="form-control textStyle right-in" id="c_u" name="c_u" value="'+val.c_u+'" step="0.01" '+disabled+' /></td>';
+
                          righe_html += '<td class="totale right-in" ><input type="number" class="form-control textStyle right-in" id="totale" name="totale" value="'+val.totale+'" step="0.01" '+disabled+'  /></td>';
 
 
