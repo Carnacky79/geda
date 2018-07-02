@@ -72,7 +72,19 @@ switch ($_REQUEST['action']) {
      break;
 
 
+     case 'deleteRiga':
+         if ( !isset($_REQUEST['id_riga']) ) { die(json_encode(false)); }
+         if ( !isset($_REQUEST['id_location']) ) { die(json_encode(false)); }
+         if ( !isset($_REQUEST['id_prodotto']) ) { die(json_encode(false)); }
+         if ( !isset($_REQUEST['quantita']) ) { die(json_encode(false)); }
 
+         $id_riga = json_decode($_REQUEST['id_riga']);
+         $id_location = json_decode($_REQUEST['id_location']);
+         $id_prodotto = json_decode($_REQUEST['id_prodotto']);
+         $quantita = json_decode($_REQUEST['quantita']);
+
+         $operazione = $giornate->delRiga($id_riga, $id_location, $id_prodotto, $quantita);
+     break;
 
 
 

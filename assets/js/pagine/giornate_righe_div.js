@@ -226,17 +226,26 @@ $(document).on('change', '#c_u', function(event) {
 
 
      $(document).on('click', '.riga_delete', function(){
-
           if (confirm('Confermare l\'eliminazione della riga?')) {
                var id_riga = $(this).closest('tr').attr('id_riga');
 
                if ( id_riga.indexOf('progressivo')=='-1' ) {
+                   var id_location = $( "#id_location" ).val();
+                   var id_prodotto = $('[id_riga = '+id_riga+']').find( "#id_prodotto" ).val();
+                   var quantita = $('[id_riga = '+id_riga+']').find('td.quantita').children('input#quantita').val();
+
+                   var ajax_obj = {pag:'giornate', action:'deleteRiga', obj:{ id_riga:id_riga, id_location:id_location, id_prodotto:id_prodotto, quantita:quantita}};
+                   ajax_call(ajax_obj);
+
                     var riga = {};
                     riga.id_riga = id_riga;
                     riga.id_giornata = id_giornata;
 
                     riga_da_eliminare[id_riga]=riga;
                }
+
+
+              console.log(ajax_obj);
 
                var table = $('#tab_giornate_righe').DataTable();
                table.row( $('#tab_giornate_righe tbody tr[id_riga="'+id_riga+'"]') ).remove().draw();
@@ -246,14 +255,13 @@ $(document).on('change', '#c_u', function(event) {
      });
 
 
-
-
-
      $(document).on('change', '[name="c_u"], [name="quantita"], [name="totale"], [name="id_metodo_pagamento"]', function(){
-          calcola();
+         calcola();
      });
 
-
+     $(document).on('change', '[name="c_u"], [name="quantita"]', function(){
+         $('form.form_valori').submit();
+     });
 
 
      var totale_incasso = parseFloat(0);

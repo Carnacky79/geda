@@ -185,6 +185,24 @@ class giornate extends baseclass {
      }
 
 
+    public function delRiga($id_riga, $id_location, $id_prodotto, $quantita) {
+
+        // $sql1 = " UPDATE giornate SET sys_attivo='0' WHERE id_giornata='$id_giornata' AND id_buyer='$this->id_buyer' ";
+
+        $sql1 = "DELETE FROM giornate_righe WHERE id_giornata_riga='".$id_riga."' AND id_buyer='".$this->id_buyer."'";
+        $sql2 = "UPDATE giacenze SET quantita = quantita + ".$quantita." WHERE id_prodotto = ".$id_prodotto." AND id_location = ".$id_location;
+        if ( !$this->db->query($sql1) ) {
+             return false;
+        }else{
+             if ( !$this->db->query($sql2) ) {
+                 return false;
+             }
+        }
+
+        return true;
+    }
+
+
      public function deleteRecord($id_giornata) {
 
           // $sql1 = " UPDATE giornate SET sys_attivo='0' WHERE id_giornata='$id_giornata' AND id_buyer='$this->id_buyer' ";
