@@ -110,6 +110,19 @@
                     </ul>
                </li>
 
+               <?php if($livello_utente!==1) { ?>
+               <li class="has_sub">
+                   <a class="waves-effect"><i class="zmdi zmdi-file-text"></i> <span>Lista esaurimento</span> <span class="menu-arrow"></span> </a>
+                   <ul class="list-unstyled">
+                       <li><a page_link="giacenze_sotto" href="?pagina=giacenze_sotto">Prodotti sotto Giacenza</a></li>
+                       <li><a page_link="giacenze_limite" href="?pagina=giacenze_limite">Prodotti prossimi al limite</a></li>
+                   </ul>
+               </li>
+               <?php } else { ?>
+
+
+
+               <?php } ?>
           </ul>
           <div class="clearfix"></div>
      </div>

@@ -110,7 +110,7 @@ $(document).on('change', '#id_prodotto', function(event) {
 $(document).on('change', '#quantita', function(event) {
     //alert( $(this).closest('tr').attr('id_riga') );
     var riga_attuale = $(this).closest('tr').attr('id_riga');
-    var totale = $(this).val() * $('[id_riga = '+riga_attuale+']').find('td.right-in').children('input#c_u').val();
+    var totale = Math.trunc($(this).val()) * $('[id_riga = '+riga_attuale+']').find('td.right-in').children('input#c_u').val();
     $('[id_riga = '+riga_attuale+']').find('td.totale').children('input#totale').val(totale);
 
 });
