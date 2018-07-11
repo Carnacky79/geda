@@ -402,7 +402,7 @@ function ajax_call(oggetto) {
                          }
                          else { if(oggetto.log===true) { console.log(data); } attenzione(); if(oggetto.backError===true) { errorHandler(); } }
                     },
-                    error:function(error){ if(oggetto.log===true) { console.log(error); } attenzione(); if(oggetto.backError===true) { errorHandler(); } }
+                    error:function(error){ if(oggetto.log===true) { console.log(error); } attenzione(); console.log(error); if(oggetto.backError===true) { errorHandler(); } }
                });
 
           }

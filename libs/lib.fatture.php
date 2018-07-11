@@ -107,7 +107,9 @@ class fatture extends baseclass {
           }
 
           $operazione = $this->updateCampi($valori,$id_fattura);
-          if($operazione===false) {return false;}
+          if($operazione===false) {
+              return false;
+          }
 
           return $id_fattura;
      }
@@ -133,9 +135,12 @@ class fatture extends baseclass {
                $val = $this->db->securize($value);
 
                if ( $this->checkColumunExists('fatture',$col)>0 ) {
-
-                    $sql1 = " UPDATE fatture SET $col='$val' WHERE id_fattura='$id_fattura' AND id_buyer='$this->id_buyer' ";
-                    if ( !$this->db->query($sql1) ) { return false; }
+                    if($val != '') {
+                        $sql1 = " UPDATE fatture SET $col='$val' WHERE id_fattura='$id_fattura' AND id_buyer='$this->id_buyer' ";
+                        if (!$this->db->query($sql1)) {
+                            return false;
+                        }
+                    }
                }
           }
 

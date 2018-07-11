@@ -133,9 +133,12 @@ class ddt extends baseclass {
                $val = $this->db->securize($value);
 
                if ( $this->checkColumunExists('ddt',$col)>0 ) {
-
-                    $sql1 = " UPDATE ddt SET $col='$val' WHERE id_ddt='$id_ddt' AND id_buyer='$this->id_buyer' ";
-                    if ( !$this->db->query($sql1) ) { return false; }
+                    if($val != '') {
+                        $sql1 = " UPDATE ddt SET $col='$val' WHERE id_ddt='$id_ddt' AND id_buyer='$this->id_buyer' ";
+                        if (!$this->db->query($sql1)) {
+                            return false;
+                        }
+                    }
                }
           }
 

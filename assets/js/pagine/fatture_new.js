@@ -53,6 +53,8 @@ function salva_valori() {
 
      valori = toJSON(valori);
 
+
+
      var obj = {};
      obj.totale_imponibile = totale_imponibile;
      obj.totale_iva = totale_iva;
@@ -61,6 +63,7 @@ function salva_valori() {
      obj.totale_totale = totale_totale;
      obj.obj_righe = obj_righe;
 
+     console.log(valori);
 
      if(errori_righe===false && !$.isEmptyObject(obj.obj_righe)) {
 
@@ -69,7 +72,7 @@ function salva_valori() {
           }};
           ajax_call(ajax_obj);
      } else {
-          attenzione('error--Attenzione, controllare i valori inseriti.');
+         attenzione('error--Attenzione, controllare i valori inseriti.');
      }
 
 }
