@@ -1,10 +1,14 @@
 
 <!-- Start content -->
 <div class="content">
-	<div class="container">
+	<div class="container" <?php if($livello_utente===3) { ?> style="display:table;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;" <?php } ?> >
 
 		<!-- Page-Title -->
-		<div class="row">
+		<div class="row" <?php if($livello_utente===3) { ?> style="height: 100%;
+    display: table-row;" <?php } ?>>
 			<?php if($livello_utente===1) { ?>
 				<div class="col-lg-4 col-md-6">
 					<a href="?pagina=prodotti_list" >
@@ -77,17 +81,35 @@
 						</div>
 					</a>
 				</div>
-			<?php } else if($livello_utente===2) { ?>
-				<div class="col-lg-4 col-md-6">
-					<a href="?pagina=giornate_today" >
-						<div class="card-box widget-user bg-info border-info">
-							<i class="zmdi zmdi-time"></i>
-							<div class="text-right">
-								<h2><span>Giornata odierna</span></h2>
-							</div>
+			<?php } else if($livello_utente===3) { ?>
+				<div class="col-md-6" style="display: table-cell; float:left">
+
+						<div class="card-box widget-user border-info" style="height:300px">
+
 						</div>
-					</a>
+
 				</div>
+                <div class="col-md-6" style="display: table-cell; float:left">
+
+                        <div class="card-box widget-user border-info" style="height:300px">
+
+                        </div>
+
+                </div>
+                <div class="col-md-6" style="display: table-cell; float:left">
+
+                        <div class="card-box widget-user border-info" style="height:300px">
+
+                        </div>
+
+                </div>
+                <div class="col-md-6" style="display: table-cell; float:left">
+
+                        <div class="card-box widget-user border-info" style="height:300px">
+
+                        </div>
+
+                </div>
 			<?php } ?>
 		</div>
 		<!-- end row -->

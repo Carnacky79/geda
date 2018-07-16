@@ -11,3 +11,4 @@
 30/06/2018  In giornate.php di assets/ajax, aggiunto il case "deleteRiga" per eliminare la riga della giornata e per aggiornare le giacenze.
 01/07/2018  In giornate.righe.js di assets/js/pagine, aggiunta la chiamata ajax per il case deleteRiga, importando e passando i vari parametri necessari.
 02/07/2018  In lib.giornate.php aggiunta la funzione delRiga che viene richiamata dal case deleteRiga di giornate.php. In tale funzione viene fatto il delete della riga dalla tabella giornate_righe e l'update sulle giacenze.
+08/07/2018  Risolto problema per il quale, in locale, non andava l'inserimento di fatture e ddt.
