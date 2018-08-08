@@ -84,7 +84,7 @@ function carica() {
                                    selected = val_1.id_categoria_tipologia+'_'+val_1.id_oggetto;
                                    oggetto_corrente = record_oggetti[val_1.id_oggetto];
                               }
-                              if(val_1.barcode==undefined || val_1.barcode=='') {val_1.barcode='';} else { val_1.barcode='('+val_1.barcode+')'; }
+                              if(val_1.barcode==undefined || val_1.barcode=='') {val_1.barcode='';} else { val_1.barcode=''+val_1.barcode+''; }
                               select_oggetti += '<div class="item" data-value="'+val_1.id_categoria_tipologia+'_'+val_1.id_oggetto+'"><span class="description">'+val_1.barcode+'</span><span class="text" >'+val_1.nome+'</span></div>';
                          });
 

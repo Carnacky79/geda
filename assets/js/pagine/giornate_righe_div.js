@@ -260,7 +260,7 @@ $(document).on('change', '#c_u', function(event) {
      });
 
      $(document).on('change', '[name="c_u"], [name="quantita"]', function(){
-         $('form.form_valori').submit();
+         //$('form.form_valori').submit();
      });
 
 
